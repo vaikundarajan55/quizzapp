@@ -1,0 +1,33 @@
+{
+  "name": "quiz-app/iala-buoyage",
+  "description": "IALA Buoyage Drag-Drop Quiz — CodeIgniter 4",
+  "type": "project",
+  "license": "MIT",
+  "require": {
+    "php": "^7.4 || ^8.0",
+    "codeigniter4/framework": "^4.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    },
+    "exclude-from-classmap": [
+      "**/Database/Migrations/**"
+    ]
+  },
+  "scripts": {
+    "post-update-cmd": [
+      "CodeIgniter\\Commands\\Utilities\\PublishComposerJsonUpdates::postUpdate"
+    ]
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "allow-plugins": {
+      "codeigniter4/devkit": true
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

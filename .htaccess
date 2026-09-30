@@ -1,0 +1,13 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+
+    # Drop trailing slashes here (e.g. /admin/ -> /admin) so the redirect
+    # doesn't expose the internal public/ folder
+    RewriteCond %{REQUEST_URI} ^(.+)/$
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ %1 [L,R=301]
+
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
